@@ -1,0 +1,82 @@
+def update(y):
+    for i in z.keys():
+        if(i==y):
+            if(choice==4):
+                print("how many scooters need")
+                k=int(input("enter number:"))
+                v=z.get(i)
+                a=v-k
+                if(a>=0):
+                    z.update({i:a})
+                else:
+                    print("that many scooters not available")
+            else:
+                y=z.get(i)
+                z.update({i:(y-1)})
+def rent1():
+    q="this is hourly rental system"
+    print(q.center(50,'@'))
+    i=int(input("enter number of hours: "))
+    if(i<=24):
+        j=i*5
+        print("Total fare is: ",j)
+    else:
+        print("this plan not suits for you")
+def rent2():
+    r="this is daily rental system"
+    print(r.center(50,'-'))
+    j=int(input("enter number of days: "))
+    if(j<=30):
+        k=20*j
+        print("Total fare is: ",k)
+    else:
+        print("this plan not suits for you")
+def rent3():
+    s="this is weekly rental system"
+    print(s.center(50,'#'))
+    l=int(input("enter number of weeks: "))
+    m=l*60
+    print("Total fare is: ",m)
+def rent4():
+    t="this is family based rental system"
+    print(t.center(50,'^'))
+    o=int(input("enter your choice: 1.hours 2.days 3.weeks"))
+    if(o==1):
+        p=int(input("enter no. of hours: "))
+        if(p<=24):
+            j=p*5
+            d=j-(j*0.3)
+            print("Total fare is: ",d)
+    if(o==2):
+        p=int(input("enter no. of days: "))
+        e=20*p
+        l=e-e*0.3
+        print("Total fare is: ",l)
+    else:
+        p=int(input("enter no. of weeks: "))
+        f=p*60
+        f=f-f*0.3
+        print("Total fare is: ",f)
+if __name__=='__main__':
+    z={"scooty":5,"jupiter":5,"apache":10,"victor":10,"pulsar": 4,"heavy duty":3}
+    print("Available bikes: ")
+    for i in z.items():
+        print(i,end="   ")
+    print("\n Rent bikes on hourly basis 5$ per hour")
+    print("Rent bikes on daily basis 20$ per day")
+    print("Rent bikes on weekly basis 60$ per week")
+    print("Rent bikes on family basis (3 to 5) 30% discount on total price")
+    choice=int(input("enter input from 1 to 4: "))
+    yes=input("enter yes/NO: ")
+    if(yes=="yes"):
+        y=input("enter scooter name:")
+        update(y)
+        if(choice==1):
+            rent1()
+        if(choice==2):
+            rent2()
+        if(choice==3):
+            rent3()
+        if(choice==4):
+            rent4()
+    print("Total available scooters: ",z.items())
