@@ -1,0 +1,19 @@
+#Using oops
+class reverse:
+    def __init__(self,a):
+        self.b=a
+    def method(self):
+        print("Before input corrected: ",self.b)
+class test(reverse):
+    def rev(self):
+        self.c=[]
+        k=0
+        for i in range(len(self.b)-1,-1,-1):
+            (self.c).append(self.b[i])
+        self.d=""
+        self.d=(self.d).join(self.c)
+        print("After corrected input: ",self.d)
+n=input("enter a sentence: ")
+a=test(n)
+a.method()
+a.rev()
