@@ -1,0 +1,18 @@
+import random
+print("This is guessing a number game".center(70,'-'))
+print("Instructions are: ")
+print("1.If your guess is correct then you will earn 20 points")
+print("2.You have to choose a number between 1-3")
+print("3.If your guess is incorrect then you will loss 5 points")
+print("4.If total score is zero then you will have one chance to test your luck if it fails then game will exit")
+t=0
+while(t>=0):
+    k=int(input("enter your guessing number: "))
+    l=random.randint(1,3)
+    if(k==l):
+       t=t+20
+       print("Your score is: ",t)
+    else:
+        t=t-5
+        print("You lost 5 points")
+        print("Now your score is: ",t)
