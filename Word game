@@ -1,0 +1,62 @@
+import random
+import time
+print("Instructions".center(50,'-'))
+print("1.Total chances are 9")
+print("2.Maximum 6 players")
+print("3.One want to play their full game and next chance")
+print("4.You have only 10 turns for entire game")
+print("5.If you use hints then 3 turns will be reduced")
+print("Game starts".center(50,'@'))
+t=int(input("enter number of players: "))
+a=[]
+for i in range(t):
+    a.append(input("enter player's name:  "))
+b=["secret","good","hai","books","laptop","notes"]
+o=1
+y=0
+x=0
+while(t):
+    turns=0
+    k=''
+    c=random.choice(b)
+    for i in range(len(c)):
+        print('_',end=" ")
+    print("Guess a character".center(50,'*'))
+    print("Your guessing letters will be %d"%(len(c)))
+    print("%d %s player is going to play"%(o,a[x]))
+    time.sleep(1)
+    while(turns<10):
+        s=0
+        m=0
+        print("Guess character one by one")
+        d=input("enter character: ")
+        k+=d
+        for i in c:
+            if(i in k):
+                print(i)
+                s+=1
+            else:
+                print('_')
+                if(i not in k):
+                    m=c.index(i)
+        if(s!=len(c)):
+            print("You want hint if yes press 'yes'")
+            hint=input("enter yes or no: ")
+            if(hint=="yes"):
+                print("Your turns are reduced")
+                print("two turns are reduced")
+                turns+=3
+                print("Now you have %d turns"%(10-turns))
+                print("Your hint is: ",c[m])
+        if(s==len(c)):
+            print("You Won")
+            print("You have good vocabulary")
+            y=1
+            break
+        turns+=1
+    o+=1
+    x+=1
+    if(y!=1):
+        print("Your turns are over")
+        print("You lost game")
+    t-=1
