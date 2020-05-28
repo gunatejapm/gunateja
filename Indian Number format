@@ -1,0 +1,42 @@
+def calculate_string(String):
+    k=String.split(' ')
+    p=k[0].split('|')
+    j=""
+    j=j.join(p)
+    q=k[2].split('|')
+    l=""
+    l=l.join(q)
+    if(k[1]=='P'):
+        r=float(j)+float(l)
+    if(k[1]=='S'.casefold()):
+        r=float(j)-float(l)
+    if(k[1]=='M'.casefold()):
+        r=float(j)*float(l)
+    if(k[1]=='D'.casefold()):
+        r=float(j)/float(l)
+    z=[]
+    r=str(r)
+    c=r.split('.')
+    for i in c[0]:
+        z.append(i)
+    #z.append('0')
+    x=0
+    h=8
+    z=z[::-1]
+    s=3
+    for i in range(len(z)):
+        if(s<len(z)):
+            z.insert(s,'|')
+            s+=3
+        else:
+            break
+    print(z,len(z))
+    if(len(z)%2==0):
+        z.append('0')
+    y=""
+    y=y.join(z)
+    w=k[1]
+    y=y[::-1]+'.'+c[1]
+    print(y)
+String=input("enter: ")
+calculate_string(String)
