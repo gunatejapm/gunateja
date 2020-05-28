@@ -1,0 +1,41 @@
+class user_id:
+    '''To generate User-id'''
+    def __init__(self,First_Name,Last_Name,PIN,N):
+        self.First_Name=First_Name
+        self.Last_Name=Last_Name
+        self.PIN=PIN
+        self.N=N
+    def length(self):
+        if(len(self.First_Name)==len(self.Last_Name)):
+            for i in range(len(self.First_Name)):
+                k=self.First_Name[i]
+                l=self.Last_Name[i]
+                if(ord(k)>ord(l)):
+                    self.Shorter_Name=self.Last_Name
+                    self.Longer_Name=self.First_Name
+                else:
+                    self.Shorter_Name=self.First_Name
+                    self.Longer_Name=self.Last_Name
+                    break
+        if(len(self.First_Name)>len(self.Last_Name)):
+            self.Shorter_Name=self.Last_Name
+            self.Longer_Name=self.First_Name
+        if(len(self.First_Name)<len(self.Last_Name)):
+            self.Shorter_Name=self.First_Name
+            self.Longer_Name=self.Last_Name
+    def make(self):
+        self.y=self.Shorter_Name[len(self.Shorter_Name)-1]
+        self.x=[]
+        for i in str(self.PIN):
+            self.x.append(i)
+        self.a=self.x[N-1]
+        self.b=self.x[len(self.x)-N]
+        print(self.y+self.Longer_Name.swapcase()+self.a+self.b)
+First_Name=input("enter First_Name: ")
+Last_Name=input("enter Last_Name: ")
+PIN=int(input("enter PIN: "))
+N=int(input("enter N: "))
+z=user_id(First_Name,Last_Name,PIN,N)
+z.length()
+z.make()
+print(z.Shorter_Name,z.Longer_Name)
